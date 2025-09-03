@@ -171,6 +171,7 @@ exports.getAllServices = async (req, res) => {
 // Get single service
 exports.getServiceById = async (req, res) => {
   try {
+    console.log("request", req.params)
     const service = await Service.findById(req.params.id).populate(
       "provider",
       "name email mobile"
